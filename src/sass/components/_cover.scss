@@ -1,0 +1,16 @@
+
+.cover,.site-cover {
+    overflow: hidden;
+    position: relative;
+  }
+  .top-cover-img{
+    position: absolute;
+    top: -40px;
+    right: -40px;
+  }
+  .bottom-cover-img{
+    position: absolute;
+    top: 50%;
+    left: -70px;
+    opacity: .9;
+  }

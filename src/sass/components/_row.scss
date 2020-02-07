@@ -1,0 +1,22 @@
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  flex-direction: column;
+//  padding-top: 20rem;
+    @include respond(m){
+   flex-direction: row;
+      padding-top: 0;
+    }
+  
+  
+  }
+  
+  .col-1 {
+    width: 100%;
+    display: flex;
+    opacity: 1;
+    margin: 3rem ;
+  }
+  

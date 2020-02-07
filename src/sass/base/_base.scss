@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 50%;
+
+    /*deviding 16/default browser size! V.018*/
+    // @include respond(s){
+    //     font-size: 50%;
+    // }
+    @include respond(xs) {
+        font-size: 55%;
+    }
+
+    @include respond(m) {
+        font-size: 60%;
+    }
+
+    @include respond(l) {
+        font-size: 66.5%;
+    }
+
+    @include respond(xl) {
+        font-size: 75%;
+    }
+}
+
+body {
+
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.container {
+    overflow: hidden;
+    max-width: 65rem;
+    margin: 0 auto;
+    padding-right: 18px;
+    padding-left: 18px;
+    @include respond(m){
+        max-width: 114rem;
+    }
+}

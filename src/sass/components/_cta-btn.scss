@@ -1,0 +1,58 @@
+.cta-btn {
+
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        padding: .4rem 2.5rem;
+        font-size: 1.8rem;
+        display: inline-block;
+        border-radius: 1px;
+        transition: all .2s;
+        position: relative;
+        border: none;
+        color: $white-color;
+        font-family: inherit;
+        box-shadow: $main-shadow;
+        cursor: pointer;
+        backface-visibility: hidden;
+        margin-bottom: 30px;
+    }
+
+    &:hover {
+        box-shadow: $main-shadow;
+        transform: translateY(-2px);
+       
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        /*when we click*/
+        transform: translateY(1px);
+        /*in relation to link not hover*/
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+    }
+
+    &--green {
+
+        background-color: $green-color-light;
+
+        background: -webkit-$linear-green;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: $linear-green;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    &--blue {
+
+        background-color: $main-color;
+
+      
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: $linear-main;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+}
