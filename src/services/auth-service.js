@@ -1,5 +1,5 @@
 import * as jwt from "jsonwebtoken";
-import * as moment from "moment";
+//import * as moment from "moment";
 
 class AuthService {
   auth_token = "auth_token";
@@ -22,10 +22,10 @@ class AuthService {
   getExpiration = token => {
     const exp = this.decode(token).exp;
 
-    return moment.unix(exp);
+    return null //moment.unix(exp);
   };
   isValid = token => {
-    return moment().isBefore(this.getExpiration(token));
+    return null //moment().isBefore(this.getExpiration(token));
   };
 
   isAuthenticated = () => {

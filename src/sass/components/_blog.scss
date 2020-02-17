@@ -1,0 +1,60 @@
+.blog{
+   
+    background-color: $grey-light;
+    background-attachment: scroll;
+    position: relative;
+    @include background-cover;
+    z-index: 22;
+
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $black-color;
+        opacity: 0.3;
+        text-align: center;
+    }
+
+    &__heading {
+      padding: 200px 0 150px;
+      color:$white-color;
+      text-align: center;
+      position: relative;
+      h1 {
+        font-size: 50px;
+        margin-top: 0;
+        font-weight: 700;
+      }
+     
+    }
+  
+      &__subheading {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.1;
+        display: block;
+        margin: 10px 0 0;
+      }
+}
+
+// MIXINS
+
+.blogEditor{
+   // margin-top: 5rem;
+    background: rgba($color: $grey-light, $alpha: .1);
+ height: 900px; 
+    padding-top: 2rem;
+    position: relative;
+    font-size: 2rem;
+}
+.editorWrapper{
+    width: 80%;
+     height: 500px;
+     margin: 2rem auto;
+    padding:2rem;
+
+    background:#fff;
+    box-shadow: $main-shadow;
+}

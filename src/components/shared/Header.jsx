@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import MyButton from "./MyButton";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   constructor() {
     super();
 
     this.state = {
-      menuList: ["Home", "Portfolio", "Blog", "CV", "Login"],
+      menuList: [
+        { value: "Home", linkTo: "/", active: true },
+        { value: "Portfolio", linkTo: "/portfolio", active: false },
+        { value: "Blog", linkTo: "/blog", active: false },
+        { value: "Work", linkTo: "/work", active: false },
+        { value: "Login", linkTo: "/login", active: false }
+      ],
       mobileMenuClicked: false
     };
   }
@@ -19,14 +26,14 @@ export default class Header extends Component {
               key={i}
               className={`navbar__${mobile ? "mobile--" : ""}items--list--item`}
             >
-              <a
-                href="#"
+              <Link
+                to={item.linkTo}
                 className={`navbar__${
                   mobile ? "mobile--" : ""
                 }items--list--item--link`}
               >
-                {item}
-              </a>
+                {item.value}
+              </Link>
             </li>
           ))}
         </ul>
@@ -43,11 +50,18 @@ export default class Header extends Component {
     return (
       <React.Fragment>
         <header className="container navbar">
-          <a href="#" className="navbar__logo">
+          <Link to="/" className="navbar__logo">
             M Rawhani
-          </a>
+          </Link>
           {this.renderMenu(false)}
-<div className="navbar__btn">          <MyButton value='contact me' buttonType='blue' utilClass='no-margin-bottom'/></div>
+          <div className="navbar__btn">
+            {" "}
+            <MyButton
+              value="contact me"
+              buttonType="blue"
+              utilClass="no-margin-bottom"
+            />
+          </div>
           <div
             onClick={this.menuButtonClick}
             className={` navbar__menu-toggle ${
@@ -59,14 +73,15 @@ export default class Header extends Component {
             <div className="navbar__menu-toggle--middle"></div>
           </div>
           {/* /////////////////////////////////////// */}
-          <div class={`${this.state.mobileMenuClicked ?'modal--is-visible':'' } modal `}>
-            <div class="modal--inner">
-            { this.renderMenu(true)}
-            </div>
-            <div class="modal--close">X</div>
+          <div
+            className={`${
+              this.state.mobileMenuClicked ? "modal--is-visible" : ""
+            } modal `}
+          >
+            <div className="modal--inner">{this.renderMenu(true)}</div>
+            <div className="modal--close">X</div>
           </div>
         </header>
-      
       </React.Fragment>
     );
   }

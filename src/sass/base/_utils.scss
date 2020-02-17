@@ -5,5 +5,43 @@
     background: $orange-color !important;
 }
 .no-margin-bottom{
-    margin-bottom: 0;
+    margin: 0;
+}
+
+text.CircularProgressbar-text {
+    transform: translate(-38%, 5%);
+    /* white-space: initial; */
+}
+.ql-bubble .ql-tooltip{
+    left: -70px !important;
+}
+.background-green{
+    background: transparent;
+    background: linear-gradient(360deg, rgba($green-color-light,.3) 0%, rgba($green-color-light,.2) 31%, rgba(255,255,255,1) 100%);
+    border-bottom:3px solid $green-color-light  ;
+}
+.background-orange{
+    background: transparent;
+    background: linear-gradient(360deg, rgba($orange-color,.3) 0%, rgba($orange-color,.2) 31%, rgba(255,255,255,1) 100%);
+    border-bottom:3px solid $orange-color  ;
+}
+.background-blue{
+    background: transparent;
+    background: linear-gradient(360deg, rgba($main-color,.3) 0%, rgba($main-color,.2) 31%, rgba(255,255,255,1) 100%);
+    border-bottom:3px solid $main-color  ;
+}
+
+.btn-green{
+    background: $green-color-light;
+    background: $linear-green;
+}
+
+.btn-blue{
+    background: $main-color;
+    background: $linear-main;
+}
+
+.btn-orange{
+    background: $orange-color;
+    background: $linear-orange;
 }

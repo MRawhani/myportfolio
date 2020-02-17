@@ -12,12 +12,12 @@ import {
   FETCH_BOOKINGS_INIT,
   UPDATE_RENTAL_SUCCESS,
   UPDATE_RENTAL_FAIL,
-  RESET_RENTAL_ERRORS
+  RESET_ERRORS
 } from "./types";
 import axios from "axios";
 import authService from "../services/auth-service";
 import axiosService from "../services/axios-service";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "http://localhost:3001/api/v1" 
 const axiosInstance = axiosService.getInstance();
 /// Rentals
 export const fetchRentals = keyword => dispatch => {
@@ -94,10 +94,12 @@ export const loginAction = userData => {
       .post(`${apiUrl}/users/auth`, userData)
       .then(res => res.data)
       .then(token => {
+        debugger
         authService.saveToken(token);
         dispatch(loginSuccess());
       })
       .catch(err => {
+        debugger
         dispatch(loginfailure(err.response.data.errors));
       });
   };
@@ -183,10 +185,7 @@ export const uploadImage = image =>{
     Promise.reject(response.response.data.errors[0]);
   })
 }
-export const resetRentalErrors=()=>{
-  debugger
-  return { type: RESET_RENTAL_ERRORS }
-}
+
 export const updateRental= (id,rentalData) => dispatch => {
   axiosInstance
     .patch(`${apiUrl}/rentals/${id}`,rentalData)
@@ -204,3 +203,7 @@ export const updateRental= (id,rentalData) => dispatch => {
       });
     });
 }
+
+export const resetErrors = () => {
+  return { type: RESET_ERRORS };
+};
