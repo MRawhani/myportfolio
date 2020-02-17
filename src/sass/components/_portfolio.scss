@@ -1,0 +1,118 @@
+.portfolio {
+    //  background-color: aqua;
+    padding: 10rem 2rem;
+
+    &__item {
+        //  background-color: #fcf6f9; 
+        background: transparent;
+        width: 100%;
+        position: relative;
+        margin: 15rem auto;
+        box-shadow: $main-shadow;
+        padding: 3rem;
+        border-radius: 2rem;
+        &:first-child{
+            margin-top: 0;
+        }
+        @include respond(m) {
+            width: 80%;
+        }
+
+        &--link {
+            position: absolute;
+            top: -60px;
+            right: -20px;
+            box-shadow: $main-shadow;
+            transition: all .3s;
+            cursor: pointer;
+            @include respond(m) {
+                top: -77px;
+                right: -30px;
+            }
+
+            &:hover {
+                box-shadow: $main-shadow;
+                transform: translateY(-10px);
+
+            }
+
+            &:active,
+            &:focus {
+                outline: none;
+                /*when we click*/
+                transform: translateY(1px);
+                /*in relation to link not hover*/
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+            }
+
+            &__img {
+                width: 90px;
+                height: 90px;
+                box-shadow: $main-shadow;
+                border-radius: .5rem;
+
+                @include respond(m) {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            &__title {
+                position: absolute;
+                top: 0px;
+                right: 80px;
+                box-shadow: $main-shadow;
+                border-radius: .5rem;
+                background: $linear-orange;
+                color: $white-color;
+                padding: 1rem;
+                white-space: nowrap;
+
+                @include respond(m) {
+                    top: 0px;
+                    right: 114px;
+                }
+            }
+        }
+
+        &--content {
+
+            &__type {
+                background: $linear-main;
+                padding: .5rem 2rem;
+                border-radius: .5rem;
+                display: inline-block;
+                color: $white-color;
+
+
+                margin-bottom: 2rem;
+            }
+
+            &__desc {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            &__tools {
+
+                & strong {
+                    display: inline-block;
+                    color: $orange-color;
+                    padding: .5rem 0rem;
+                    border-radius: .5rem;
+                    display: inline-block;
+                    background: $white-color;
+                    font-size: 1.9rem;
+
+                    margin-bottom: 2rem;
+                }
+
+                & span {
+                    font-size: 1.5rem;
+                    margin-left: 1.5rem;
+                }
+            }
+        }
+    }
+
+}

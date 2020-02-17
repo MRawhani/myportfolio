@@ -1,0 +1,40 @@
+.text-block{
+
+
+    &__headline{
+            font-size: 3rem;
+            
+    }
+
+    &__coloredHeadline{
+            color: $orange-color;
+            font-size: inherit;
+    }
+    &__sub{
+        font-size: 1.5rem;
+        line-height: 2;
+
+    }
+    &__desc{
+        font-weight: 300;
+        color: $color-text;
+        width: 90%;
+        margin: 10px 0;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        
+    }
+}
+
+.orange-line{
+    width: 2rem;
+    height: .2rem;
+    background: $orange-color;
+    margin: 1rem 0;
+}
+.line-green{
+    width: 2rem;
+    height: .2rem;
+    background: $green-color-light;
+    margin: 1rem 0;
+} 
