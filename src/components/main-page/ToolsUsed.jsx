@@ -75,7 +75,7 @@ class ToolsUsed extends Component {
           lineColor="line-green"
           position="center"
         />
-        {tools.data.length === 0 ? (
+        {!tools.data || tools.data.length === 0 ? (
           <h1>Loading...</h1>
         ) : (
           <div className="toolsCircles">{this.renderToolsIuse(tools.data)}</div>

@@ -22,7 +22,7 @@ class Blog extends Component {
       <div className="page">
         <PageTop title="Blogs" color="blue" image='blogging2.svg'/>
         <div className="articles container">
-          {this.props.blogs.data.length === 0 ? (
+          {!this.props.blogs.data || this.props.blogs.data.length === 0 ? (
             <h1>Loadin..</h1>
           ) : (
             <div className="">

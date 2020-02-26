@@ -106,7 +106,7 @@ export default class PortfolioListing extends Component {
     return (
       <div className=" page__portfolio">
         <div className="container">
-          {list.length === 0 ? (
+          {!list || list.length === 0 ? (
             <h1>Loading...</h1>
           ) : (
             <div className="portfolio">{this.renderList(list)}</div>

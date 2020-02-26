@@ -32,7 +32,7 @@ class BlogLimit extends Component {
             <MyButton buttonType="blue" value="See All Blogs" linkTo="/blog" />
           </div>
           <div className="col-3">
-            {this.props.blogs.data.length === 0 ? (
+            {!this.props.blogs.data || this.props.blogs.data.length === 0 ? (
               <h1>Loadin..</h1>
             ) : (
               <div className='blog__list'>{this.renderBlogs(this.props.blogs.data)}</div>
