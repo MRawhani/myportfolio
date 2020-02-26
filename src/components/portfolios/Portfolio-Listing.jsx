@@ -114,6 +114,6 @@ export default class PortfolioListing extends Component {
         </div>
       </div>
     );
-  }
+  } 
 }
  
