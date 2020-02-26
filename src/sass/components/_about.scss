@@ -2,12 +2,12 @@
 
      
     &__left{
-        border-top-right-radius: 50%; 
-        border-bottom-left-radius: 50%; 
-        box-shadow: $main-shadow;
+       
+     //    box-shadow: $main-shadow;
         margin-right: 3rem;
         display: flex;
         align-items: center;
+        position: relative;
         &--img{
             width: 100%;
           

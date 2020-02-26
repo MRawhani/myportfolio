@@ -3,7 +3,7 @@
 import { useQuill } from "react-quilljs";
 // or const { useQuill } = require('react-quilljs');
 
- const theme = "snow";
+ const theme = "bubble";
 
  const modules = {
    toolbar: [

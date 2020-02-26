@@ -92,6 +92,7 @@ exports.register = function(req, res) {
 };
 
 exports.authMiddleware = function(req, res, next) {
+  console.log(req);
   const token = req.headers.authorization;
 
   if (token) {

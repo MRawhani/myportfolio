@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Editor from './slate-editor/Editor'
-import Editor_Hover from './slate-editor/Editor_Hover'
+//import Editor from './slate-editor/Editor'
+import EditorQuill from './slate-editor/EditorQuill'
 
 export default class BlogEdit extends Component {
     render() {
@@ -8,7 +8,7 @@ export default class BlogEdit extends Component {
             <div className=' blogEditor'>
                <div className="container">
                <h1>Write something...</h1>
-               <Editor_Hover />
+               <EditorQuill />
                </div>
                
             </div>

@@ -40,9 +40,16 @@ body {
 
 a {
     text-decoration: none !important;
-    color: inherit !important;
+    color: inherit ;
 }
-
+p{
+    font-weight: 300;
+    color: $color-text;
+   
+    margin: 10px 0;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
 .container {
     overflow: hidden;
     max-width: 65rem;

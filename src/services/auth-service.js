@@ -20,7 +20,7 @@ class AuthService {
     return this.decode(this.getToken()).username;
   }
   getExpiration = token => {
-    const exp = this.decode(token).exp;
+   // const exp = this.decode(token).exp;
 
     return null //moment.unix(exp);
   };

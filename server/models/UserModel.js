@@ -18,12 +18,19 @@ const userSchema = new Schema({
         required: 'Email is Required',
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
       },
-      password:{
-          type: String,
-          min:[4, "Too Short, min is 4"],
-          max: [32, "Too long, max is 128 characters"]
+      encryptedPassword:{
+        type: String,
+        min:[4, "Too Short, min is 4"],
+        max: [32, "Too long, max is 128 characters"]
 
-      }
+    },
+    password:{
+        type: String,
+        min:[4, "Too Short, min is 4"],
+        max: [32, "Too long, max is 128 characters"]
+
+    },
+      role: { type: String, enum: ['admin', 'restricted'], required: true }
       
 });
 

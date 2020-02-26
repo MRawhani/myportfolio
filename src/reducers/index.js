@@ -1,12 +1,19 @@
 import thunk from "redux-thunk";
 
 import { authReducer } from "./auth-reducer";
+import { portfolioReducer } from "./portfoliosReducer";
+import { toolReducer } from "./toolsReducer";
+import { blogsReducer,blogReducer } from "./blogsReducer";
 
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 
 export const init = () => {
   const reducers = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    portfolios:portfolioReducer,
+    tools: toolReducer,
+    blogs: blogsReducer,
+    blog:blogReducer
   });
 
   const composeEnhancer =

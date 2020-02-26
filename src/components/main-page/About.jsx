@@ -12,7 +12,7 @@ export default function About() {
             src={`${process.env.PUBLIC_URL}/images/about.svg`}
             alt=""
           />
-   
+             {/* <div className="border-fancy"></div> */}
         </div>
         <div className="col-1 about__right">
           <TextBlock
@@ -30,7 +30,7 @@ export default function About() {
                  oreinted Software EngineerA passionate results
                 oreited Software Engineer"
           />
-          <MyButton buttonType="green" value="Get My CV" />
+          <MyButton buttonType="green" value="Get My CV"/>
         </div>
       </div>
    

@@ -11,8 +11,8 @@ export default class Header extends Component {
         { value: "Home", linkTo: "/", active: true },
         { value: "Portfolio", linkTo: "/portfolio", active: false },
         { value: "Blog", linkTo: "/blog", active: false },
-        { value: "Work", linkTo: "/work", active: false },
-        { value: "Login", linkTo: "/login", active: false }
+        
+       // { value: "Login", linkTo: "/login", active: false }
       ],
       mobileMenuClicked: false
     };
@@ -57,9 +57,10 @@ export default class Header extends Component {
           <div className="navbar__btn">
             {" "}
             <MyButton
-              value="contact me"
+              value="Get My CV"
               buttonType="blue"
               utilClass="no-margin-bottom"
+              
             />
           </div>
           <div

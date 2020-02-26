@@ -1,13 +1,13 @@
 
 $main-color: #3548CB;
 $second-color:#8693F2;
-$linear-main:linear-gradient(to right, rgba(#8693F2 ,.7) , rgba(#3548CB ,.7));
+$linear-main:linear-gradient(to right, rgba(#8693F2 ,1) , rgba(#3548CB ,1));
   
 $orange-color: #FF9597;
-$linear-orange: linear-gradient(to right, #FF9597, rgba(#FF9597 ,.7));
+$linear-orange: linear-gradient(to right, #FF9597, rgba(#FF9597 ,1));
 $green-color-light: #4DDDBA;
 $green-color-dark: #02CC9C;
-$linear-green: linear-gradient(to right, #4DDDBA, rgba(#02CC9CBA,.5));
+$linear-green: linear-gradient(to right, #4DDDBA, rgba(#02CC9CBA,1));
 
 $white-color:#fcf9ec; 
 $black-color: #2F2E41;
@@ -16,6 +16,9 @@ $grey-light:#AEB0BF;
 $color-text: #777;
 $red-dark: red;
 //#FBC949
+//#F5F3FD
+$background-color:#F5F3FD;
 
 
 $main-shadow:0 1rem 2rem rgba(0, 0, 0, .2);
+$second-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);

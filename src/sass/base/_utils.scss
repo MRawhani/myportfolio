@@ -17,18 +17,18 @@ text.CircularProgressbar-text {
 }
 .background-green{
     background: transparent;
-    background: linear-gradient(360deg, rgba($green-color-light,.3) 0%, rgba($green-color-light,.2) 31%, rgba(255,255,255,1) 100%);
-    border-bottom:3px solid $green-color-light  ;
+    background: linear-gradient(180deg, rgba($green-color-light,.2) 0%, rgba($green-color-light,.1) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $green-color-light, $alpha: .5)  ;
 }
 .background-orange{
     background: transparent;
-    background: linear-gradient(360deg, rgba($orange-color,.3) 0%, rgba($orange-color,.2) 31%, rgba(255,255,255,1) 100%);
-    border-bottom:3px solid $orange-color  ;
+    background: linear-gradient(180deg, rgba($orange-color,.2) 0%, rgba($orange-color,.1) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $orange-color, $alpha: .5)  ;
 }
 .background-blue{
     background: transparent;
-    background: linear-gradient(360deg, rgba($main-color,.3) 0%, rgba($main-color,.2) 31%, rgba(255,255,255,1) 100%);
-    border-bottom:3px solid $main-color  ;
+    background: linear-gradient(180deg, rgba($main-color,.2) 0%, rgba($main-color,.1) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $main-color , $alpha: .5) ;
 }
 
 .btn-green{
@@ -44,4 +44,42 @@ text.CircularProgressbar-text {
 .btn-orange{
     background: $orange-color;
     background: $linear-orange;
+}
+
+.bg-top-orange{
+    background: rgba($orange-color,.3);
+    background: linear-gradient(180deg, rgba($orange-color,.3) 0%, rgba($orange-color,.2) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $orange-color, $alpha: .5)  ;
+}
+
+.bg-top-blue{
+    background: rgba($main-color,.3);
+    background: linear-gradient(180deg, rgba($main-color,.3) 0%, rgba($main-color,.2) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $main-color, $alpha: .5)  ;
+}
+
+.bg-top-green{
+    background: rgba($green-color-light,.3);
+    background: linear-gradient(180deg, rgba($green-color-light,.3) 0%, rgba($green-color-dark,.2) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $green-color-light, $alpha: .5)  ;
+}
+
+.small-flex-mobile{
+    flex: 2;
+    @include respond(m){
+        flex: 5;
+    }
+}
+
+.border-fancy {
+    position: absolute;
+    height: 40%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 2rem;
+    z-index: -1;
+    border-radius: 30% 70% 28% 72% / 58% 57% 43% 42% ;
+    //30% 70% 54% 46% / 30% 30% 70% 70%;
+    
 }

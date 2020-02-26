@@ -19,8 +19,16 @@
     opacity: 1;
     margin: 3rem 0;
     flex: 1;
+
+    &-3d{
+      width: 30%; flex: 1;
+    }
   }
   .col-2{
+
     flex: 5;
+  }
+  .col-3{
+    flex: 2;
   }
   
