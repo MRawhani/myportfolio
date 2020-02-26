@@ -8,7 +8,7 @@
         width: 100%;
         position: relative;
         margin: 15rem auto;
-        box-shadow: $main-shadow;
+        box-shadow: $second-shadow;
         padding: 3rem;
         border-radius: 2rem;
         &:first-child{
@@ -48,7 +48,7 @@
             &__img {
                 width: 90px;
                 height: 90px;
-                box-shadow: $main-shadow;
+                box-shadow: $second-shadow;
                 border-radius: .5rem;
 
                 @include respond(m) {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 export default class PortfolioListing extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       list: [
@@ -45,7 +45,7 @@ export default class PortfolioListing extends Component {
     });
   };
   renderColorClassname = i => {
-      debugger
+   
     let num = i;
     if (!(i <= 3)) {
       num = this.renderColor(i);
@@ -56,11 +56,15 @@ export default class PortfolioListing extends Component {
     else if (num === 3)
       return { first: "background-blue", second: "btn-green" };
   };
-  renderList = () => {
-    return this.state.list.map((item, i) => (
+  renderList = (list) => {
+   
+    //const { list } = this.props;
+    return list.map((item, i) => (
       <div
         key={i}
-        className={`row portfolio__item ${this.renderColorClassname(i+1).first}`}
+        className={`row portfolio__item ${
+          this.renderColorClassname(i + 1).first
+        }`}
       >
         <div className="col-1 no-margin-bottom col-2">
           <div className="portfolio__item--content ">
@@ -77,16 +81,17 @@ export default class PortfolioListing extends Component {
           <a
             href={item.link}
             target="_blank"
+            rel="noopener noreferrer"
             className="portfolio__item--link"
           >
             <img
               className=" portfolio__item--link__img"
-              src={`${process.env.PUBLIC_URL}/images/home-bg.jpg`}
+              src={`${item.image}`}
               alt=""
             />
             <h1
               className={`portfolio__item--link__title ${
-                this.renderColorClassname(i+1).second
+                this.renderColorClassname(i + 1).second
               }`}
             >
               {item.title}
@@ -97,10 +102,15 @@ export default class PortfolioListing extends Component {
     ));
   };
   render() {
+    const { list } = this.props;
     return (
-      <div className="page page__portfolio">
+      <div className=" page__portfolio">
         <div className="container">
-          <div className="portfolio">{this.renderList()}</div>
+          {list.length === 0 ? (
+            <h1>Loading...</h1>
+          ) : (
+            <div className="portfolio">{this.renderList(list)}</div>
+          )}
         </div>
       </div>
     );

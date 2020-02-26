@@ -8,7 +8,7 @@ export default class ImageHelper {
     //this is just for displaying on editors, it done by default the same
     const reader = new FileReader();
     reader.addEventListener("load", e => {
-      debugger;
+      
       //   setImageBase64(e.target.result);
       //   insertToEditor(e.target.result);
       return  new Promise.resolve(e.target.result);
@@ -24,7 +24,7 @@ export default class ImageHelper {
     input.click();
 
     input.onchange = () => {
-      debugger;
+      
       const file = input.files[0];
       console.log("file: " + file);
      this.setupReader(file);

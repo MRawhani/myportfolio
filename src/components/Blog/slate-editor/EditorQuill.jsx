@@ -7,7 +7,7 @@ import {theme,
   formats,
   placeholder} from './QuillRes'
 import 'quill/dist/quill.snow.css'; // Add css for snow theme
-//import "quill/dist/quill.bubble.css"; // Add css for bubble theme
+import "quill/dist/quill.bubble.css"; // Add css for bubble theme
 import MyButton from "../../shared/MyButton";
 export default () => {
   const [imageBase64, setImageBase64] = React.useState(null);
@@ -25,7 +25,7 @@ export default () => {
     //just delete this custom method and everythig will remain the same
     const reader = new FileReader();
     reader.addEventListener("load", e => {
-      debugger;
+      
       setImageBase64(e.target.result);
       insertToEditor(e.target.result);
     });
@@ -34,7 +34,7 @@ export default () => {
 
   const insertToEditor = url => {
     //the url parameter can accept 64data or web address, so can copress it or just get address
-    debugger;
+    
     const range = quill.getSelection();
     quill.insertEmbed(range.index, "image", url);
   };
@@ -57,14 +57,14 @@ if(result) {
     
   insertToEditor(value);
 } else {
-     // debugger;
+     // 
      const input = document.createElement("input");
      input.setAttribute("type", "file");
      input.setAttribute("accept", "image/*");
      input.click();
 
    input.onchange = () => {
-     debugger;
+     
        const file = input.files[0];
       console.log("file: " + file);
       setupReader(file);
@@ -73,14 +73,14 @@ if(result) {
      };
 }
    
-    // debugger;
+    // 
     // const input = document.createElement("input");
     // input.setAttribute("type", "file");
     // input.setAttribute("accept", "image/*");
     // input.click();
 
     // input.onchange = () => {
-    //   debugger;
+    //   
     //   const file = input.files[0];
     //   console.log("file: " + file);
     //   setupReader(file);
@@ -90,7 +90,7 @@ if(result) {
   };
 
   React.useEffect(() => {
-    debugger;
+    
     if (quill) {
       // Add custom handler for Image Upload
       quill.getModule("toolbar").addHandler("image", selectLocalImage);
@@ -101,7 +101,7 @@ if(result) {
 
     quill.on("text-change", function(delta, oldDelta, source) {
       
-      debugger;
+      
       if (source === "api") {
         console.log("An API call triggered this change.");
       } else if (source === "user") {

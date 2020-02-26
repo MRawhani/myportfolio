@@ -5,11 +5,10 @@ import { Carousel } from "react-responsive-carousel";
 import MyButton from "../shared/MyButton";
 
 export default class Hero extends Component {
+ 
   render() {
-    
     return (
       <div className="cover">
-       
         <div className="main-section">
           <div
             className="background-image"
@@ -65,12 +64,48 @@ export default class Hero extends Component {
                           officia autem expedita
                         </p>
 
-                        <MyButton buttonType='green' value='Hire me' />
+                        <MyButton
+                          buttonType="green"
+                          value="Hire me"
+                          linkTo="/contact"
+                        />
                         <div className="hero-content__social">
                           <div></div>
-                          <i>i</i>
-                          <i>i</i>
-                          <i>i</i>
+                          <a
+                            href="https://www.facebook.com/mrawhani"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fab icon fa-facebook-f"></i>
+                          </a>
+                          <a
+                            href="https://www.facebook.com/mrawhani"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fab icon fa-twitter"></i>
+                          </a>
+                          <a
+                            href="https://www.facebook.com/mrawhani"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fab icon fa-whatsapp"></i>
+                          </a>
+                          <a
+                            href="https://www.facebook.com/mrawhani"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fab icon fa-instagram"></i>
+                          </a>
+                          <a
+                            href="https://www.facebook.com/mrawhani"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fab icon fa-github"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -83,6 +118,7 @@ export default class Hero extends Component {
                         emulateTouch={true}
                         showStatus={false}
                         infiniteLoop={true}
+                        cancelable={true}
                       >
                         <div>
                           <img
@@ -101,7 +137,7 @@ export default class Hero extends Component {
                         <div>
                           <img
                             className="svg-group__img"
-                            src={`${process.env.PUBLIC_URL}/images/code-thinking2.svg`}
+                            src={`${process.env.PUBLIC_URL}/images/code-thinking3.svg`}
                             alt=""
                           />
                         </div>
@@ -113,8 +149,6 @@ export default class Hero extends Component {
             </div>
           </div>
         </div>
-        
-     
       </div>
     );
   }

@@ -1,12 +1,19 @@
 import {
-  FETCH_RENTALS,
-  FETCH_RENTAL_By_ID,
-  FETCH_RENTAL_By_ID_INIT,
+  FETCH_PORTFOLIOS,
+  FETCH_PORTFOLIOS_FAIL,
+  FETCH_PORTFOLIOS_INIT,
+  FETCH_TOOLS,
+  FETCH_TOOLS_FAIL,
+  FETCH_TOOLS_INIT,
+  FETCH_BLOGS,
+  FETCH_BLOGS_FAIL,
+  FETCH_BLOGS_INIT,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGOUT,
-  FETCH_RENTALS_FAIL,
-  FETCH_RENTALS_INIT,
+  FETCH_BLOG_By_ID,
+  FETCH_BLOG_By_ID_INIT,
+ 
   FETCH_BOOKINGS_SUCCESS,
   FETCH_BOOKINGS_FAIL,
   FETCH_BOOKINGS_INIT,
@@ -20,20 +27,20 @@ import axiosService from "../services/axios-service";
 const apiUrl = "http://localhost:3001/api/v1" 
 const axiosInstance = axiosService.getInstance();
 /// Rentals
-export const fetchRentals = keyword => dispatch => {
-  const url = keyword ? `rentals?city=${keyword}` : "rentals";
-  console.log("Log: " + url);
+export const getPortfolios = () => dispatch => {
+ 
+  dispatch({ type: FETCH_PORTFOLIOS_INIT });
 
-  dispatch({ type: FETCH_RENTALS_INIT });
-
-  axiosInstance
-    .get(`${apiUrl}/${url}`)
-    .then(rentals => {
-      dispatch({ type: FETCH_RENTALS, payload: rentals.data });
+  axios
+    .get(`${apiUrl}/portfolio/getPortfolios`)
+    .then(portfolios => {
+      
+      dispatch({ type: FETCH_PORTFOLIOS, payload: portfolios.data });
     })
     .catch(err => {
+      
       dispatch({
-        type: FETCH_RENTALS_FAIL,
+        type: FETCH_PORTFOLIOS_FAIL,
         payload: err.response
           ? err.response.data.errors
           : [{ detail: err.message }]
@@ -41,22 +48,26 @@ export const fetchRentals = keyword => dispatch => {
     });
 };
 
-//the dispatch from the middle ware
-export const fetchRentalById = id => dispatch => {
-  dispatch({ type: FETCH_RENTAL_By_ID_INIT });
+export const getTools = () => dispatch => {
+ 
+  dispatch({ type: FETCH_TOOLS_INIT });
 
-  return axios
-    .get(`${apiUrl}/rentals/${id}`)
-    .then(rental => {
-      dispatch({ type: FETCH_RENTAL_By_ID, payload: rental.data });
-      return rental.data;
+  axios
+    .get(`${apiUrl}/tools/getTools`)
+    .then(Tools => {
+      
+      dispatch({ type: FETCH_TOOLS, payload: Tools.data });
     })
     .catch(err => {
-      return Promise.reject(err);
+      
+      dispatch({
+        type: FETCH_TOOLS_FAIL,
+        payload: err.response
+          ? err.response.data.errors
+          : [{ detail: err.message }]
+      });
     });
 };
-
-//USers
 
 export const register = userData => {
   return axios.post(`${apiUrl}/users/register`, userData).then(
@@ -68,7 +79,46 @@ export const register = userData => {
     }
   );
 };
+export const getBlogs = limit => dispatch => {
+  dispatch({ type: FETCH_BLOGS_INIT });
 
+  axios
+    .get(`${apiUrl}/blogs/getBlogs?limit=${limit}`)
+    .then(blogs => {
+      
+      dispatch({ type: FETCH_BLOGS, payload: blogs.data });
+    })
+    .catch(err => {
+      
+      dispatch({
+        type: FETCH_BLOGS_FAIL,
+        payload: err.response
+          ? err.response.data.errors
+          : [{ detail: err.message }]
+      });
+    });
+  
+};
+export const getBlogById = id => dispatch => {
+  dispatch({ type: FETCH_BLOG_By_ID_INIT });
+
+  axios
+    .get(`${apiUrl}/blogs/getBlogById/${id}`)
+    .then(blogs => {
+      
+      dispatch({ type: FETCH_BLOG_By_ID, payload: blogs.data });
+    })
+    .catch(err => {
+      
+      dispatch({
+        type: FETCH_BLOGS_FAIL,
+        payload: err.response
+          ? err.response.data.errors
+          : [{ detail: err.message }]
+      });
+    });
+  
+};
 const loginSuccess = () => {
   const username = authService.getUsername();
   return {
@@ -94,12 +144,12 @@ export const loginAction = userData => {
       .post(`${apiUrl}/users/auth`, userData)
       .then(res => res.data)
       .then(token => {
-        debugger
+        
         authService.saveToken(token);
         dispatch(loginSuccess());
       })
       .catch(err => {
-        debugger
+        
         dispatch(loginfailure(err.response.data.errors));
       });
   };
@@ -113,7 +163,7 @@ export const logout = () => {
 };
 
 export const createBooking = booking => {
-  debugger
+  
   return axiosInstance
     .post(`${apiUrl}/bookings/`, booking)
     .then(res => {
@@ -177,11 +227,11 @@ export const uploadImage = image =>{
 
   return axiosInstance.post(`${apiUrl}/image-upload`, formData)
   .then(json =>{
-    debugger
+    
     return json.data.imageUrl
   })
   .catch((response)=>{
-    debugger
+    
     Promise.reject(response.response.data.errors[0]);
   })
 }
@@ -190,11 +240,11 @@ export const updateRental= (id,rentalData) => dispatch => {
   axiosInstance
     .patch(`${apiUrl}/rentals/${id}`,rentalData)
     .then(rentals => {
-      debugger
+      
       dispatch({ type: UPDATE_RENTAL_SUCCESS, payload: rentals.data });
     })
     .catch(err => {
-      debugger
+      
       dispatch({
         type: UPDATE_RENTAL_FAIL,
         payload: err.response
