@@ -24,7 +24,8 @@ import {
 import axios from "axios";
 import authService from "../services/auth-service";
 import axiosService from "../services/axios-service";
-const apiUrl = "http://localhost:3001/api/v1" 
+const apiUrl = "https://yaharajah.herokuapp.com/api/v1"
+//"http://localhost:3001/api/v1" 
 const axiosInstance = axiosService.getInstance();
 /// Rentals
 export const getPortfolios = () => dispatch => {

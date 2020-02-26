@@ -1,6 +1,10 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "engines": {
+    "node": "v12.13.0",
+    "npm": "6.12.0"
+  },
   "private": true,
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
@@ -46,6 +50,7 @@
     "typed": "^0.3.3"
   },
   "scripts": {
+    "heroku-postbuild": "npm install && npm run build",
     "start": "npm start --prefix server",
     "start-dev": "react-scripts start",
     "build": "react-scripts build",
