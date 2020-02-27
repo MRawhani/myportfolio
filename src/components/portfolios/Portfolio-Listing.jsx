@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Fade from 'react-reveal/Fade';
 export default class PortfolioListing extends Component {
   constructor(props) {
     super(props);
@@ -60,8 +60,9 @@ export default class PortfolioListing extends Component {
    
     //const { list } = this.props;
     return list.map((item, i) => (
-      <div
-        key={i}
+      <Fade key={i} top>
+          <div
+        
         className={`row portfolio__item ${
           this.renderColorClassname(i + 1).first
         }`}
@@ -99,7 +100,9 @@ export default class PortfolioListing extends Component {
           </a>
         </div>
       </div>
-    ));
+ 
+      </Fade>
+       ));
   };
   render() {
     const { list } = this.props;

@@ -45,6 +45,12 @@
             @content
         };
     }
+    @if $breakpoint == Ls{
+        @media screen and (orientation:landscape) {
+            @content
+         }
+     
+    }
 
 }
 
@@ -58,7 +64,11 @@
         @content
     };
 }
-
+@mixin  atLandScape {
+    @media screen and (orientation:landscape) {
+        /* Your CSS Here*/
+     }
+}
 
 @mixin background-cover() {
     -webkit-background-size: cover;

@@ -17,18 +17,18 @@ text.CircularProgressbar-text {
 }
 .background-green{
     background: transparent;
-    background: linear-gradient(180deg, rgba($green-color-light,.2) 0%, rgba($green-color-light,.1) 31%, rgba(255,255,255,1) 100%);
-    border-top:3px solid rgba($color: $green-color-light, $alpha: .5)  ;
+    background: linear-gradient(180deg, rgba($green-color-light,.1) 0%, rgba($green-color-light,.05) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $green-color-light, $alpha: .3)  ;
 }
 .background-orange{
     background: transparent;
-    background: linear-gradient(180deg, rgba($orange-color,.2) 0%, rgba($orange-color,.1) 31%, rgba(255,255,255,1) 100%);
-    border-top:3px solid rgba($color: $orange-color, $alpha: .5)  ;
+    background: linear-gradient(180deg, rgba($orange-color,.1) 0%, rgba($orange-color,.05) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $orange-color, $alpha: .3)  ;
 }
 .background-blue{
     background: transparent;
-    background: linear-gradient(180deg, rgba($main-color,.2) 0%, rgba($main-color,.1) 31%, rgba(255,255,255,1) 100%);
-    border-top:3px solid rgba($color: $main-color , $alpha: .5) ;
+    background: linear-gradient(180deg, rgba($main-color,.1) 0%, rgba($main-color,.05) 31%, rgba(255,255,255,1) 100%);
+    border-top:3px solid rgba($color: $main-color , $alpha: .3) ;
 }
 
 .btn-green{
@@ -47,15 +47,15 @@ text.CircularProgressbar-text {
 }
 
 .bg-top-orange{
-    background: rgba($orange-color,.3);
-    background: linear-gradient(180deg, rgba($orange-color,.3) 0%, rgba($orange-color,.2) 31%, rgba(255,255,255,1) 100%);
-    border-top:3px solid rgba($color: $orange-color, $alpha: .5)  ;
+    background: rgba($orange-color,.2);
+    background: linear-gradient(180deg, rgba($orange-color,.2) 0%, rgba($orange-color,.1) 31%, rgba($background-color,1) 100%);
+    border-top:3px solid rgba($color: $orange-color, $alpha: .3)  ;
 }
 
 .bg-top-blue{
-    background: rgba($main-color,.3);
-    background: linear-gradient(180deg, rgba($main-color,.3) 0%, rgba($main-color,.2) 31%, rgba(255,255,255,1) 100%);
-    border-top:3px solid rgba($color: $main-color, $alpha: .5)  ;
+    background: rgba($main-color,.2);
+    background: linear-gradient(180deg, rgba($main-color,.2) 0%, rgba($main-color,.1) 31%, rgba($background-color,1) 100%);
+    border-top:3px solid rgba($color: $main-color, $alpha: .3)  ;
 }
 
 .bg-top-green{

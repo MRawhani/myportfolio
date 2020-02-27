@@ -51,7 +51,11 @@ export default class Header extends Component {
       <React.Fragment>
         <header className="container navbar">
           <Link to="/" className="navbar__logo">
-            M Rawhani
+          <img
+                          className=""
+                          src={`${process.env.PUBLIC_URL}/images/logo3.png`}
+                          alt=""
+                        />
           </Link>
           {this.renderMenu(false)}
           <div className="navbar__btn">

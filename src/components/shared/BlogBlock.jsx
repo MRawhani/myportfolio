@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Roll from 'react-reveal/Roll';
 
 export default function BlogBlock({ blog,page }) {
   return (
-    <div className="blogBlock">
+    <Roll>
+       <div className="blogBlock">
         <div className={`blogBlock__line ${page? "blogBlock__line--visibleAll" : "" }`}></div>
       <div className="blogBlock__content">
    
@@ -33,5 +35,7 @@ export default function BlogBlock({ blog,page }) {
         </div>
       </div>
     </div>
-  );
+
+    </Roll>
+     );
 }

@@ -21,9 +21,9 @@ class Layout extends Component {
         />
        <footer style={{
          textAlign:'center',
-         padding:'20px',
-         marginTop:'20px',
-         borderTop:'1px solid #ccc'
+         padding:'10px',
+        
+        
        }}>&copy;</footer>
       </div>
     );

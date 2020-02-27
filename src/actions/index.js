@@ -13,33 +13,26 @@ import {
   LOGOUT,
   FETCH_BLOG_By_ID,
   FETCH_BLOG_By_ID_INIT,
- 
-  FETCH_BOOKINGS_SUCCESS,
-  FETCH_BOOKINGS_FAIL,
-  FETCH_BOOKINGS_INIT,
-  UPDATE_RENTAL_SUCCESS,
-  UPDATE_RENTAL_FAIL,
+  
   RESET_ERRORS
 } from "./types";
 import axios from "axios";
 import authService from "../services/auth-service";
-import axiosService from "../services/axios-service";
-const apiUrl = "https://mrawhani.herokuapp.com/api/v1"
-//"http://localhost:3001/api/v1" 
-const axiosInstance = axiosService.getInstance();
+
+const apiUrl = "http://localhost:3001/api/v1";
+//"https://mrawhani.herokuapp.com/api/v1"
+//"http://localhost:3001/api/v1"
+
 /// Rentals
 export const getPortfolios = () => dispatch => {
- 
   dispatch({ type: FETCH_PORTFOLIOS_INIT });
 
   axios
     .get(`${apiUrl}/portfolio/getPortfolios`)
     .then(portfolios => {
-      
       dispatch({ type: FETCH_PORTFOLIOS, payload: portfolios.data });
     })
     .catch(err => {
-      
       dispatch({
         type: FETCH_PORTFOLIOS_FAIL,
         payload: err.response
@@ -50,17 +43,14 @@ export const getPortfolios = () => dispatch => {
 };
 
 export const getTools = () => dispatch => {
- 
   dispatch({ type: FETCH_TOOLS_INIT });
 
   axios
     .get(`${apiUrl}/tools/getTools`)
     .then(Tools => {
-      
       dispatch({ type: FETCH_TOOLS, payload: Tools.data });
     })
     .catch(err => {
-      
       dispatch({
         type: FETCH_TOOLS_FAIL,
         payload: err.response
@@ -86,11 +76,9 @@ export const getBlogs = limit => dispatch => {
   axios
     .get(`${apiUrl}/blogs/getBlogs?limit=${limit}`)
     .then(blogs => {
-      
       dispatch({ type: FETCH_BLOGS, payload: blogs.data });
     })
     .catch(err => {
-      
       dispatch({
         type: FETCH_BLOGS_FAIL,
         payload: err.response
@@ -98,7 +86,6 @@ export const getBlogs = limit => dispatch => {
           : [{ detail: err.message }]
       });
     });
-  
 };
 export const getBlogById = id => dispatch => {
   dispatch({ type: FETCH_BLOG_By_ID_INIT });
@@ -106,11 +93,9 @@ export const getBlogById = id => dispatch => {
   axios
     .get(`${apiUrl}/blogs/getBlogById/${id}`)
     .then(blogs => {
-      
       dispatch({ type: FETCH_BLOG_By_ID, payload: blogs.data });
     })
     .catch(err => {
-      
       dispatch({
         type: FETCH_BLOGS_FAIL,
         payload: err.response
@@ -118,7 +103,6 @@ export const getBlogById = id => dispatch => {
           : [{ detail: err.message }]
       });
     });
-  
 };
 const loginSuccess = () => {
   const username = authService.getUsername();
@@ -145,12 +129,10 @@ export const loginAction = userData => {
       .post(`${apiUrl}/users/auth`, userData)
       .then(res => res.data)
       .then(token => {
-        
         authService.saveToken(token);
         dispatch(loginSuccess());
       })
       .catch(err => {
-        
         dispatch(loginfailure(err.response.data.errors));
       });
   };
@@ -162,98 +144,6 @@ export const logout = () => {
     type: LOGOUT
   };
 };
-
-export const createBooking = booking => {
-  
-  return axiosInstance
-    .post(`${apiUrl}/bookings/`, booking)
-    .then(res => {
-      return res.data;
-    })
-    .catch(response => Promise.reject(response.response.data.errors));
-};
-
-export const getBookings = () => dispatch => {
-  dispatch({ type: FETCH_BOOKINGS_INIT });
-  axiosInstance
-    .get(`${apiUrl}/bookings/manage`)
-    .then(res => {
-      dispatch({ type: FETCH_BOOKINGS_SUCCESS, payload: res.data });
-    })
-    .catch(err => {
-      dispatch({
-        type: FETCH_BOOKINGS_FAIL,
-        payload: err.response
-          ? err.response.data.errors
-          : [{ detail: err.message }]
-      });
-    });
-};
-
-export const getRentals = ()=>{
-  return axiosInstance.get(`${apiUrl}/rentals/manage`).then(
-    res => {
-      return res.data;
-    },
-    err => {
-      return Promise.reject(err.response.data.errors);
-    }
-  );
-}
-export const creatRental = rentalData => {
-  return axiosInstance.post(`${apiUrl}/rentals`, rentalData).then(
-    res => {
-      return res.data;
-    },
-    err => {
-      return Promise.reject(err.response.data.errors);
-    }
-  );
-};
-
-export const deleteRental = rentalId => {
-  return axiosInstance.delete(`${apiUrl}/rentals/${rentalId}`).then(
-    res => {
-      return res.data;
-    },
-    err => {
-      return Promise.reject(err.response.data.errors);
-    }
-  );
-};
-
-export const uploadImage = image =>{
-  const formData = new FormData();
-  formData.append('image', image);
-
-  return axiosInstance.post(`${apiUrl}/image-upload`, formData)
-  .then(json =>{
-    
-    return json.data.imageUrl
-  })
-  .catch((response)=>{
-    
-    Promise.reject(response.response.data.errors[0]);
-  })
-}
-
-export const updateRental= (id,rentalData) => dispatch => {
-  axiosInstance
-    .patch(`${apiUrl}/rentals/${id}`,rentalData)
-    .then(rentals => {
-      
-      dispatch({ type: UPDATE_RENTAL_SUCCESS, payload: rentals.data });
-    })
-    .catch(err => {
-      
-      dispatch({
-        type: UPDATE_RENTAL_FAIL,
-        payload: err.response
-          ? err.response.data.errors
-          : [{ detail: err.message }]
-      });
-    });
-}
 
 export const resetErrors = () => {
   return { type: RESET_ERRORS };

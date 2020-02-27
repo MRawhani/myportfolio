@@ -1,3 +1,6 @@
+.artivles{
+  padding-bottom: 3rem;
+}
 .blog {
 
   background-color: $grey-light;
@@ -47,6 +50,7 @@
     flex-direction: row;
    }
    &--blogPage{
+    
     @include respond(m){  
       flex-direction: column;
      }
