@@ -19,7 +19,7 @@ import {
 import axios from "axios";
 import authService from "../services/auth-service";
 
-const apiUrl = "http://localhost:3001/api/v1";
+const apiUrl = process.env.REACT_APP;
 //"https://mrawhani.herokuapp.com/api/v1"
 //"http://localhost:3001/api/v1"
 
