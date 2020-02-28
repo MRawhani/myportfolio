@@ -12,7 +12,7 @@ class Blog extends Component {
       }
   renderBlogs = blogs => {
     return blogs.map((blog, i) => (
-        <div className="">
+        <div key={i} className="">
             <BlogBlock page={true} key={i} blog={blog} />
         </div>
     ));

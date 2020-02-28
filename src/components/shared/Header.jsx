@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default class Header extends Component {
   constructor() {
     super();
-
+    this.myRef = React.createRef();
     this.state = {
       menuList: [
         { value: "Home", linkTo: "/", active: true },
@@ -42,10 +42,22 @@ export default class Header extends Component {
   };
 
   menuButtonClick = e => {
+  
     this.setState({
       mobileMenuClicked: !this.state.mobileMenuClicked
-    });
+    })
+    
   };
+  menuButtonClickFalse = e => {
+  
+    this.setState({
+      mobileMenuClicked: false
+    })
+  };
+  onClick =()=>{
+    console.log('gg');
+    
+  }
   render() {
     return (
       <React.Fragment>
@@ -67,7 +79,11 @@ export default class Header extends Component {
               
             />
           </div>
-          <div
+         <div  tabIndex="0"
+  //       onBlur={()=>this.menuButtonClick()} 
+          >
+         <div
+         
             onClick={this.menuButtonClick}
             className={` navbar__menu-toggle ${
               this.state.mobileMenuClicked
@@ -79,13 +95,15 @@ export default class Header extends Component {
           </div>
           {/* /////////////////////////////////////// */}
           <div
+         
             className={`${
               this.state.mobileMenuClicked ? "modal--is-visible" : ""
             } modal `}
           >
-            <div className="modal--inner">{this.renderMenu(true)}</div>
+            <div className="modal--inner"  >{this.renderMenu(true)}</div>
             <div className="modal--close">X</div>
           </div>
+         </div>
         </header>
       </React.Fragment>
     );
