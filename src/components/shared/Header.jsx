@@ -82,7 +82,7 @@ export default class Header extends Component {
             />
           </div>
          <div  tabIndex="0"
-        // onBlur={()=>this.menuButtonClick()} 
+        onBlur={()=>this.menuButtonClick()} 
           >
          <div
          
