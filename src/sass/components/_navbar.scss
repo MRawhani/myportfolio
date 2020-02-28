@@ -195,7 +195,7 @@
 
 
 .modal {
-    position: fixed;
+    position: fixed !important;
     z-index: 5;
     background: $main-color;
     background: $linear-main;
