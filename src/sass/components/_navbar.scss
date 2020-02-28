@@ -209,7 +209,7 @@
     transform: scale(1.2);
     /*zoom out when hidden and zoom in when visible*/
     transition: all .3s ease-out;
-   
+    -webkit-backface-visibility: hidden;
     &--inner {
         width: 100%;
 
