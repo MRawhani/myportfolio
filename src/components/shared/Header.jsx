@@ -17,6 +17,14 @@ export default class Header extends Component {
       mobileMenuClicked: false
     };
   }
+  menuButtonClick = e => {
+    
+  
+    this.setState({
+      mobileMenuClicked: !this.state.mobileMenuClicked
+    })
+    
+  };
   renderMenu = mobile => {
     return (
       <nav className={`navbar__${mobile ? "mobile--" : ""}items`}>
@@ -25,6 +33,7 @@ export default class Header extends Component {
             <li
               key={i}
               className={`navbar__${mobile ? "mobile--" : ""}items--list--item`}
+              onClick={this.menuButtonClick}
             >
               <Link
                 to={item.linkTo}
@@ -41,14 +50,9 @@ export default class Header extends Component {
     );
   };
 
-  menuButtonClick = e => {
-  
-    this.setState({
-      mobileMenuClicked: !this.state.mobileMenuClicked
-    })
-    
-  };
+
   menuButtonClickFalse = e => {
+
   
     this.setState({
       mobileMenuClicked: false
@@ -59,11 +63,14 @@ export default class Header extends Component {
     
   }
   render() {
+    
     return (
       <React.Fragment>
         <header className="container navbar" style={{
             paddingBottom:`${this.state.mobileMenuClicked ? '25rem' : '1.9rem'} `
-        }}>
+        }}
+       
+        >
           <Link to="/" className="navbar__logo">
           <img
                           className=""
@@ -81,8 +88,7 @@ export default class Header extends Component {
               
             />
           </div>
-         <div  tabIndex="0"
-        onBlur={()=>this.menuButtonClick()} 
+         <div  
           >
          <div
          
@@ -97,7 +103,8 @@ export default class Header extends Component {
           </div>
           {/* /////////////////////////////////////// */}
           <div
-         
+          // tabIndex="0"
+          // onBlur={()=>this.menuButtonClick()} 
             className={`${
               this.state.mobileMenuClicked ? "modal--is-visible" : ""
             } modal `}
