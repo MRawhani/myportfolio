@@ -37,12 +37,16 @@ export default class PortfolioListing extends Component {
     };
   }
   renderColor = i => {
+    debugger
     const nums = [1, 2, 3];
+    let numReturned = 1;
     nums.forEach(num => {
+      debugger
       if (i - num === 3) {
-        return num;
+        numReturned= num;
       }
     });
+    return numReturned;
   };
   renderColorClassname = i => {
    
