@@ -61,7 +61,9 @@ export default class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <header className="container navbar">
+        <header className="container navbar" style={{
+            paddingBottom:`${this.state.mobileMenuClicked ? '25rem' : '1.9rem'} `
+        }}>
           <Link to="/" className="navbar__logo">
           <img
                           className=""
@@ -80,7 +82,7 @@ export default class Header extends Component {
             />
           </div>
          <div  tabIndex="0"
-         onBlur={()=>this.menuButtonClick()} 
+        // onBlur={()=>this.menuButtonClick()} 
           >
          <div
          
