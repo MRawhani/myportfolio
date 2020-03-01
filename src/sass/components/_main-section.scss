@@ -179,6 +179,13 @@
                     transform: translateY(-3px);
                 }
             }
+            &:nth-child(7)>i{
+                 
+                transition: all .3s;
+                &:hover{
+                    transform: translateY(-3px);
+                }
+            }
             
         }
         

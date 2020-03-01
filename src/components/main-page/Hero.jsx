@@ -5,22 +5,21 @@ import { Link, scroller } from "react-scroll";
 import ReactTyped from "react-typed";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import MyButton from "../shared/MyButton";
+
 import Rotate from "react-reveal/Rotate";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 
 import Fade from "react-reveal/Fade";
 export default class Hero extends Component {
-  scrollToElement=(element)=>{
-    scroller.scrollTo(element,{
-            duration:1500,
-            delay:100,
-            smooth:true,
-            offset:-100
-    })
- 
-}
+  scrollToElement = element => {
+    scroller.scrollTo(element, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -100
+    });
+  };
   render() {
     return (
       <div className="cover">
@@ -89,15 +88,18 @@ export default class Hero extends Component {
                         </Fade>
 
                         <Fade bottom>
-                          <Link to="book__form" activeClass="active" spy={true} smooth={true}>
-                          <MyButton
-                            buttonType="green"
-                            value="Hire me"
-                            
-                           
-                          />
+                          <Link
+                            to="book__form"
+                            activeClass="active"
+                            spy={true}
+                            smooth={true}
+                          >
+                            <input
+                              type="button"
+                              className={`btn cta-btn cta-btn--green `}
+                              value="Hire me"
+                            />
                           </Link>
-                         
                         </Fade>
                         <Bounce left>
                           <div className="hero-content__social">
@@ -130,12 +132,20 @@ export default class Hero extends Component {
                             >
                               <i className="fab icon fa-instagram"></i>
                             </a>
+                            
                             <a
                               href="https://www.github.com/mrawhani"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
                               <i className="fab icon fa-github"></i>
+                            </a>
+                            <a
+                              href="mailto:mohammedrawhani@gmail.com"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                             <i class="fas icon fa-envelope"></i>
                             </a>
                           </div>
                         </Bounce>

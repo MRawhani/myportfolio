@@ -27,7 +27,7 @@ export default function About() {
               sub="I value honesty, obtaining agreed-results and details-focused oreintation"
               desc="Energetic hardworking and results-oriented web developer with considerable training and experience in Web site development in all stages of design, coding, and manipulating of Web applications, creating and maintaining functional, attractive, and responsive websites. Clear understanding of modern technologies and best design practices. Experienced with Html, Css, React, NodeJs and databases. Great attention to details and focus on raising UX scores and customer retention."
             />
-            <MyButton buttonType="green" value="Get My CV" />
+            <MyButton buttonType="green" value="My Resume" />
           </div>
         </Fade>
       </div>

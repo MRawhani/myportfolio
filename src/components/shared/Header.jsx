@@ -82,7 +82,7 @@ export default class Header extends Component {
           <div className="navbar__btn">
             {" "}
             <MyButton
-              value="Get My CV"
+              value="My Resume"
               buttonType="blue"
               utilClass="no-margin-bottom"
               

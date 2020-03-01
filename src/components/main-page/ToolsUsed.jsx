@@ -40,8 +40,8 @@ class ToolsUsed extends Component {
     return (
       <div className="tools">
         <Headline
-          headline="Tools "
-          coloredHeadline="I use"
+          headline="My "
+          coloredHeadline="Skills"
           lineColor="line-green"
           position="center"
         />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function MyButton(props) {
   const fullClassesAdded = props.buttonType + " " + props.utilClass;
-  return props.value === "Get My CV" ? (
+  return props.value === "My Resume" ? (
     <a
       href="https://drive.google.com/open?id=1vGmzIPrzDJtBnXZO1ja69czgU_Hp6IV0"
       target="_blank"
@@ -12,7 +12,7 @@ export default function MyButton(props) {
      
     >{props.value}</a>
   ) : (
-    <Link to={props.linkTo}>
+    <Link to={props.linkTo ? props.linkTo : '' }>
       <input
         type="button"
         className={`btn cta-btn cta-btn--${fullClassesAdded} `}

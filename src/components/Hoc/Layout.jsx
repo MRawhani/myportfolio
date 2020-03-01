@@ -24,7 +24,7 @@ class Layout extends Component {
          padding:'10px',
         
         
-       }}>&copy;</footer>
+       }}>&copy; <strong>mohammedrawhani@gmail.com</strong></footer>
       </div>
     );
   }

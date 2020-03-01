@@ -6,7 +6,7 @@ export default class Cv extends Component {
     return (
       <div>
         <PageTop
-          title="Get My Cv"
+          title="My Resume"
           color="green"
           image="undraw_files_6b3d.svg"
         />
