@@ -33,7 +33,7 @@ export default class Header extends Component {
             <li
               key={i}
               className={`navbar__${mobile ? "mobile--" : ""}items--list--item`}
-              onClick={this.menuButtonClick}
+              onClick={this.menuButtonClickFalse}
             >
               <Link
                 to={item.linkTo}
