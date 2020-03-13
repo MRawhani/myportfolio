@@ -23,7 +23,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 //"https://mrawhani.herokuapp.com/api/v1"
 //"http://localhost:3001/api/v1"
 
-/// Rentals
+
 export const getPortfolios = () => dispatch => {
   dispatch({ type: FETCH_PORTFOLIOS_INIT });
 
