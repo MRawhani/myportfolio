@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 import Header from "../shared/Header";
 
 class Layout extends Component {
- 
+ componentDidMount(){
+   console.log(process.env);
+   
+ }
   render() {
     return (
       <div className='site-cover'>
