@@ -11,7 +11,7 @@ export default function MyButton(props) {
       className={` cta-btn cta-btn--${fullClassesAdded} `}
      
     >{props.value}</a>
-  ) : ( 
+  ) : (  
     <Link to={props.linkTo ? props.linkTo : '' }>
       <input
         type="button"
