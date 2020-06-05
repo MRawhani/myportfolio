@@ -7,6 +7,7 @@ export default function PageTop(props) {
     
         <div className="page__top--content ">
           <h1>{props.title}</h1>
+  <p >{props.desc}</p>
         </div>
         <div className="page__top--img">
     

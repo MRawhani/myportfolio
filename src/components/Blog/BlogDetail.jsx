@@ -22,13 +22,18 @@ class BlogDetail extends Component {
                   <img
                     className=""
                     src={`${process.env.PUBLIC_URL}/images/blogger.svg`}
-                    alt=""
+                    alt="صورة مدون mrawhani"
                   />{" "}
                   / by{" "}
                   {blog.data.ownerId
                     ? blog.data.ownerId.username
                     : "Moahmmed rawhani"}{" "}
-                  / {blog.data.createdAt}{" "}
+                  /   {blog.data.createdAt &&
+                new Date(blog.data.createdAt).getDate() +
+                  "-" +
+                  new Date(blog.data.createdAt).getMonth() +
+                  "-" +
+                  new Date(blog.data.createdAt).getFullYear() }{" "}
                 </p>
                 <img src={`${blog.data.image}`} alt="blog"/>
                 <div

@@ -49,9 +49,11 @@
     "simplemde": "^1.11.2",
     "slate": "^0.57.1",
     "slate-react": "^0.57.1",
+    "source-map-explorer": "^2.4.2",
     "typed": "^0.3.3"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "heroku-postbuild": "npm install && npm run build",
     "start": "npm start --prefix server",
     "start-dev": "react-scripts start",

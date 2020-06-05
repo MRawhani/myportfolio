@@ -123,11 +123,14 @@
 
     &--sub {
       width: 90%;
+      margin-bottom: 3rem;
     }
 
     &--readMore {
       display: inline-block;
       margin-top: 25px;
+      position: absolute;
+      bottom: 0;
       text-transform: uppercase;
       font-family: "Raleway", sans-serif;
       color: #f4c613 !important;

@@ -59,4 +59,9 @@ p{
     @include respond(m){
         max-width: 114rem;
     }
+
+    &__no-hidden{
+    overflow: visible;
+
+    }
 }
